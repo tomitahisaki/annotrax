@@ -30,41 +30,24 @@ notes left inside source code.
 
 ## 📦 Installation
 
-Download the macOS binary from the  
+annotrax is distributed as a standalone macOS binary.
+You do not need Go installed to use it.
+
+### 1. Download the binary
+
+Download the latest release from the
 **[Releases page](https://github.com/tomitahisaki/annotrax/releases)**.
 
-### 1. Make the binary executable
+### 2. Make it executable
 
 ```bash
-chmod +x annotrax
+chmod +x annotrax-macos
 ```
 
-### 2. Move it to a directory in your PATH
-
-#### Option A (recommended): `/usr/local/bin`
+### 3. (Option A — recommended) Install to /usr/local/bin
 
 ```bash
-sudo mv annotrax /usr/local/bin/annotrax
-```
-
-#### Option B: Use `~/bin`
-
-```bash
-mkdir -p ~/bin
-mv annotrax ~/bin/annotrax
-```
-
-Add `~/bin` to your PATH (only once):
-
-```bash
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-### 3. Verify installation
-
-```bash
-annotrax -h
+sudo mv annotrax-macos /usr/local/bin/annotrax
 ```
 
 ---
@@ -74,7 +57,7 @@ annotrax -h
 ### Scan the current directory
 
 ```bash
-annotrax
+annotrax-macos
 ```
 
 Example output:
@@ -90,7 +73,7 @@ backend/main.go:12: [NOTE] // NOTE: temporary workaround
 ### Scan a specific directory
 
 ```bash
-annotrax -dir ./src
+annotrax-macos -dir ./src
 ```
 
 ---
@@ -101,8 +84,6 @@ annotrax -dir ./src
 TODO
 FIXME
 NOTE
-HACK
-XXX
 ```
 
 Future versions will allow custom keywords via configuration.
@@ -162,7 +143,7 @@ If you plan to contribute or modify the tool, please make sure all tests pass be
 ### Build macOS binary
 
 ```bash
-GOOS=darwin GOARCH=arm64 go build -o annotrax
+GOOS=darwin GOARCH=arm64 go build -o annotrax-macos
 ```
 
 ---
