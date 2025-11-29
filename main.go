@@ -19,8 +19,6 @@ var annotationKeywords = []string{
 	"TODO",
 	"FIXME",
 	"NOTE",
-	"HACK",
-	"XXX",
 }
 
 func main() {
